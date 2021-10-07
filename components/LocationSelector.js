@@ -4,14 +4,14 @@ import { Alert, Button, StyleSheet, Text, View } from 'react-native';
 import React, { useState } from 'react';
 
 import { COLORS } from '../constants';
-import { MapPreview } from './MapPreview';
+import MapPreview from './MapPreview';
 
 const LocationSelector = props => {
   const [pickedLocation, setPickedLocation] = useState();
 
   const verifyPermissions = async () => {
     const { status } = await Location.requestForegroundPermissionsAsync()
-
+    
     if (status !== 'granted') {
       Alert.alert(
         'Permisos insuficientes',
@@ -41,12 +41,12 @@ const LocationSelector = props => {
 
   return (
     <View style={styles.container}>
-      <MapPreview location={pickedLocation} style={styles.preview}>
-        <Text>Ubicacion en proceso...</Text>
+      <MapPreview location={ pickedLocation } style={ styles.preview }>
+        {/* <Text>Ubicacion en proceso...</Text> */}
       </MapPreview>
       <Button
         title="Obtener Ubicacion"
-        color={COLORS.LIGTH_PINK}
+        color={COLORS.PEACH_PUFF}
         onPress={handleGetLocation}
       />
     </View>

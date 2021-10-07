@@ -34,7 +34,7 @@ const NewPlaceScreen = ({ navigation }) => {
                 />
 
                 <ImageSelector onImage={handlePickImage} />
-                <LocationSelector />
+                <LocationSelector /> 
                 <Button
                     title="Grabar Dirección"
                     color={COLORS.BLUE}
@@ -63,4 +63,4 @@ const styles = StyleSheet.create({
     },
 })
 
-export default NewPlaceScreen
+export default NewPlaceScreen;
